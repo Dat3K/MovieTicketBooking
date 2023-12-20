@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="20dp"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/home_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/home_showing_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking History"
+            android:textSize="25sp"
+            android:textColor="@color/colorMediumBlack"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/home_movie_chennai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorGrey"
+            android:layout_below="@+id/home_showing_text"
+            android:textStyle="italic"
+            android:text="Movies in Chennai" />
+
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/home_showing_text"
+            android:layout_toRightOf="@+id/home_movie_chennai"
+            android:src="@drawable/drop_down"
+
+            android:textColor="@color/colorGrey" />
+
+        <ImageView
+            android:id="@+id/back_home"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_toLeftOf="@+id/home_menu"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/avatar"/>
+        <ImageView
+            android:id="@+id/home_menu"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/menu" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/home_header"
+        android:id="@+id/bh_list_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

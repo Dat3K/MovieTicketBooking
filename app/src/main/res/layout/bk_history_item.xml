@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/bh_movie_img"
+        android:layout_width="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/taylor"
+        android:layout_height="80dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="150dp">
+        <TextView
+            android:id="@+id/bh_movie_name"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:text="Ant Man And The Wasp"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorMediumBlack"
+            android:layout_height="wrap_content"
+            />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_height="20dp">
+            <TextView
+                android:id="@+id/bh_movie_theater"
+                android:width="0dp"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:background="@drawable/btn_avaiable"
+                android:textStyle="bold"
+                android:textColor="@color/colorGrey"
+                android:text="Theater 1 2 3 4 5"
+                android:layout_height="20dp"/>
+            <TextView
+                android:id="@+id/bh_go_ggmap"
+                android:width="0dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:background="#007118"
+                android:textStyle="bold"
+                android:textColor="@color/whiteTextColor"
+                android:text="Map"
+                android:layout_height="20dp"/>
+            <TextView
+                android:id="@+id/bh_movie_date"
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                android:text="Friday, 12"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                android:background="@drawable/btn_avaiable"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/bh_movie_time"
+                android:layout_weight="1.5"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/btn_avaiable"
+                android:layout_height="match_parent"
+                android:text="9:30 AM"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/rectangle_border">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:src="@drawable/ticket" />
+
+                <TextView
+                    android:id="@+id/bh_movie_ticket_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text="3"
+                    android:textColor="@color/colorMediumBlack"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/vertical_line" />
+
+                <TextView
+                    android:id="@+id/bh_movie_ticket_cost"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text="Total Payable"
+                    android:textColor="@color/colorSmallGrey"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bh_ticket_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$3"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorMediumBlack"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bh_ticket_status"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle_border"
+                android:text="Not Pay"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/warningColor"
+                android:textSize="13sp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/bh_pay_button"
+            android:layout_width="match_parent"
+            android:background="@drawable/rounded_button_background"
+            android:layout_height="30dp"
+            android:textColor="@color/whiteTextColor"
+            android:textSize="20sp"
+            android:text="Pay"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/browse_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/browse_showing_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:textSize="25sp"
+            android:textColor="@color/colorMediumBlack"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/browse_movie_chennai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorGrey"
+            android:layout_below="@+id/browse_showing_text"
+            android:textStyle="italic"
+            android:text="Movies in Chennai" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/browse_showing_text"
+            android:layout_toRightOf="@+id/browse_movie_chennai"
+            android:src="@drawable/drop_down"
+            android:textColor="@color/colorGrey"
+
+            />
+
+
+        <ImageView
+            android:id="@+id/back_home"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_toLeftOf="@+id/browse_menu"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/avatar"/>
+        <ImageView
+            android:id="@+id/browse_menu"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/menu" />
+    </RelativeLayout>
+
+    <SearchView
+        android:id="@+id/browse_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/browse_header"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bordered_input"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search movies"
+        app:queryBackground="@color/whiteCardColor"
+        app:searchHintIcon="@null" />
+
+
+    <RelativeLayout
+        android:id="@+id/browse_title_all_movies"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/browse_search"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/browse_all_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Movies"
+            android:textSize="20sp"
+            android:textColor="@color/colorMediumBlack"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/browse_view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="15sp"
+            android:layout_toLeftOf="@+id/browse_sorting"
+            android:textColor="@color/colorMediumBlack"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/browse_sorting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/desc_sorting"
+            />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/list_movie_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/browse_title_all_movies"
+        android:layout_marginTop="20dp"></include>
+</RelativeLayout>

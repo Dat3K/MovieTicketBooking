@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/mp_image"
+        android:layout_width="match_parent"
+        android:alpha="0.8"
+        android:scaleType="centerCrop"
+        android:layout_height="300dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/mp_back_activity"
+            android:layout_marginTop="50dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+
+            android:src="@drawable/back"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="100dp"
+            app:cardCornerRadius="20dp"
+
+            android:id="@+id/mp_card_title"
+            android:layout_height="300dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/mp_movie_name"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Ant Man And The Wasp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/colorMediumBlack"
+                    android:layout_height="wrap_content"
+                    />
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/star"
+                        android:layout_width="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_height="20dp"/>
+                    <TextView
+                        android:id="@+id/mp_rating_index"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.9"
+                        />
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/clock"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+                    <TextView
+                        android:id="@+id/mp_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="111mins"
+                        />
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/cinema_type"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+                    <TextView
+                        android:id="@+id/mp_type_cinema"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IMAX 3D"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorSuperBlurGrey"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Synopis"
+                        android:textColor="@color/colorGrey"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/mp_trailer_btn"
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="Trailer"
+                        android:textColor="@color/whiteTextColor"
+                        android:background="@color/primaryTextColor"
+                        />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="15dp"
+
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorSuperBlurGrey"
+                            android:paddingLeft="10dp"
+                            android:textSize="12sp"
+                            android:padding="3dp"
+                            android:text="Action"
+                            android:textColor="@color/colorSmallGrey"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+
+                            android:padding="3dp"
+                            android:textSize="12sp"
+                            android:paddingBottom="5dp"
+                            android:background="@color/colorSuperBlurGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorSmallGrey"
+                            android:textStyle="bold"
+                            android:text="Adventure"/>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="8dp"
+                    android:maxLines="4"
+                    android:text="Đấu Trường SĐấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.inh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12." />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="30dp"
+                    android:layout_gravity="center_horizontal"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/colorSuperBlurGrey"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/drop_down" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mp_calendar"
+            android:layout_width="match_parent"
+            android:layout_below="@id/mp_card_title"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mp_theater_recylcer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mp_calendar"
+            android:layout_marginTop="20dp" />
+
+        <ImageView
+            android:id="@+id/mp_next_activity"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounded_button_background"
+            android:src="@drawable/next" />
+    </RelativeLayout>
+
+</RelativeLayout>

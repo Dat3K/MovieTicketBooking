@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+
+    android:id="@+id/mp_theater_recylcer_item"
+    >
+    <TextView
+        android:id="@+id/mp_theater_recylcer_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorSmallGrey"
+        android:text="Escapes Cinema"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mp_theater_schedule_item"
+        android:layout_below="@+id/mp_theater_recylcer_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
