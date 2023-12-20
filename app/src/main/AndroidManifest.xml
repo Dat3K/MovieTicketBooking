@@ -19,14 +19,37 @@
             android:exported="true">
 
         </activity>
+
         <activity
-            android:name=".home_activity.HomeActivity"
+            android:name=".home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".all_movie.AllMovieActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".movie_page.MoviePageActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".seat_booking.SeatBookingActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".booking_history.BookingHistoryActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

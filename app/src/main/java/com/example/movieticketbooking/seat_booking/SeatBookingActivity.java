@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.movieticketbooking.R;
+import com.example.movieticketbooking.booking_history.BookingHistoryActivity;
+import com.example.movieticketbooking.controllers.DataBookingHistoryController;
 import com.example.movieticketbooking.controllers.DataMovieController;
 import com.example.movieticketbooking.models.BookingHistory;
 import com.example.movieticketbooking.models.Movie;
@@ -125,47 +127,47 @@ public class SeatBookingActivity  extends AppCompatActivity {
         dialog.show();
     }
 
-//    private void handleConfirmationYes(BookingHistory bookingHistory) {
-//        DataBookingHistoryController dataBookingHistoryController = new DataBookingHistoryController(SeatBookingActivity.this);
-//
-//        dataBookingHistoryController.addBookingHistory(bookingHistory, new DataBookingHistoryController.OnBookingAddedListener() {
-//            @Override
-//            public void onBookingHistoryDataSuccess() {
-//                Log.d("Add data", "Success");
-//            }
-//
-//            @Override
-//            public void onBookingHistoryDataError(String errorMessage) {
-//                Log.d("Add data", "Failed");
-//            }
-//        });
-//
-//        Intent intent = new Intent(SeatBookingActivity.this, BookingHistoryActivity.class);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(intent);
-//        finish();
-//    }
-//
-//    private void addBookingHistory(List<Integer> selectedList) {
-//        String userId = mAuth.getCurrentUser().getUid();
-//        double cost = selectedList.size() * 10;
-//
-//        BookingHistory bookingHistory = new BookingHistory("1", userId, movie.getId(), movie.getName(), theater, date, time, selectedList, cost, movie.getImgUrl(), BookingHistory.STATUS_NOT_PAID);
-//
-//        DataBookingHistoryController dataBookingHistoryController = new DataBookingHistoryController(SeatBookingActivity.this);
-//
-//        dataBookingHistoryController.addBookingHistory(bookingHistory, new DataBookingHistoryController.OnBookingAddedListener() {
-//            @Override
-//            public void onBookingHistoryDataSuccess() {
-//                Log.d("Add data", "Success");
-//            }
-//
-//            @Override
-//            public void onBookingHistoryDataError(String errorMessage) {
-//                Log.d("Add data", "Failed");
-//            }
-//        });
-//    }
+    private void handleConfirmationYes(BookingHistory bookingHistory) {
+        DataBookingHistoryController dataBookingHistoryController = new DataBookingHistoryController(SeatBookingActivity.this);
+
+        dataBookingHistoryController.addBookingHistory(bookingHistory, new DataBookingHistoryController.OnBookingAddedListener() {
+            @Override
+            public void onBookingHistoryDataSuccess() {
+                Log.d("Add data", "Success");
+            }
+
+            @Override
+            public void onBookingHistoryDataError(String errorMessage) {
+                Log.d("Add data", "Failed");
+            }
+        });
+
+        Intent intent = new Intent(SeatBookingActivity.this, BookingHistoryActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void addBookingHistory(List<Integer> selectedList) {
+        String userId = mAuth.getCurrentUser().getUid();
+        double cost = selectedList.size() * 10;
+
+        BookingHistory bookingHistory = new BookingHistory("1", userId, movie.getId(), movie.getName(), theater, date, time, selectedList, cost, movie.getImgUrl(), BookingHistory.STATUS_NOT_PAID);
+
+        DataBookingHistoryController dataBookingHistoryController = new DataBookingHistoryController(SeatBookingActivity.this);
+
+        dataBookingHistoryController.addBookingHistory(bookingHistory, new DataBookingHistoryController.OnBookingAddedListener() {
+            @Override
+            public void onBookingHistoryDataSuccess() {
+                Log.d("Add data", "Success");
+            }
+
+            @Override
+            public void onBookingHistoryDataError(String errorMessage) {
+                Log.d("Add data", "Failed");
+            }
+        });
+    }
 
     private void getMovieDataFromIntent() {
         Intent intent = getIntent();

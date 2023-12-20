@@ -1,4 +1,4 @@
-package com.example.movieticketbooking.home_activity;
+package com.example.movieticketbooking.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.movieticketbooking.R;
+import com.example.movieticketbooking.all_movie.AllMovieActivity;
+import com.example.movieticketbooking.booking_history.BookingHistoryActivity;
 import com.example.movieticketbooking.controllers.DataMovieController;
 import com.example.movieticketbooking.models.Movie;
 
@@ -20,7 +23,6 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
     private RecyclerView listMoviesRecyclerView;
     private RecyclerView carouselRecyclerView;
-
     private List<String> imageUrlList;
     private List<Movie> movieDataList;
     private CarouselAdapter carouselAdapter;
@@ -58,11 +60,9 @@ public class HomeActivity extends AppCompatActivity {
     private void handleMovieData(List<Movie> receivedMovieData) {
         movieDataList.clear();
         movieDataList.addAll(receivedMovieData);
-
         int count = 0;
         for (Movie mv : receivedMovieData) {
-            if (count++ > 5)
-                break;
+            if (count++ > 5) break;
             imageUrlList.add(mv.getImgUrl());
         }
 
@@ -73,24 +73,22 @@ public class HomeActivity extends AppCompatActivity {
     private void setupViewAllMovies() {
         TextView viewAllMoviesTextView = findViewById(R.id.home_view_all);
         viewAllMoviesTextView.setOnClickListener(view -> {
-//            Intent intent = new Intent(HomeActivity.this, AllMoviesActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeActivity.this, AllMovieActivity.class);
+            startActivity(intent);
         });
     }
 
     private void setupListMovies() {
         movieDataList = new ArrayList<>();
-
         LinearLayoutManager listMovieLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         listMoviesRecyclerView.setLayoutManager(listMovieLayoutManager);
-
         listMovieAdapter = new MovieListAdapter(this, movieDataList);
         listMoviesRecyclerView.setAdapter(listMovieAdapter);
     }
 
     private void setupCarousel() {
         imageUrlList = new ArrayList<>();
-
+        Log.d("HomeActivity", "setupCarousel called ");
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         carouselRecyclerView.setLayoutManager(layoutManager);
 
@@ -109,13 +107,11 @@ public class HomeActivity extends AppCompatActivity {
         carouselRecyclerView = findViewById(R.id.home_carousel);
         listMoviesRecyclerView = findViewById(R.id.home_list_movies);
         ImageView bookingHistoryBtn = findViewById(R.id.home_menu);
-        bookingHistoryBtn.setOnClickListener(view -> {
-//            Intent intent = new Intent(HomeActivity.this, BookingHistoryActivity.class);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(intent);
-//            finish();
+        bookingHistoryBtn.setOnClickListener(view ->{
+            Intent intent = new Intent(HomeActivity.this, BookingHistoryActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
         });
     }
-
-
 }

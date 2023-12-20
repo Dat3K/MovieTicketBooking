@@ -1,4 +1,4 @@
-package com.example.movieticketbooking.home_activity;
+package com.example.movieticketbooking.home;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
