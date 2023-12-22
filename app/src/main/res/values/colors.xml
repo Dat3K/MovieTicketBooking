@@ -16,9 +16,12 @@
     <color name="primaryTextColor">#2661FA</color>
     <color name="loginBkColor">#F0F0F0</color>
     <color name="warningColor">#EA7435</color>
-
+    <color name="lavender">#8692f7</color>
+    <color name="purple">#6a1b9a</color>
+    <color name="grey">#9E9E9E</color>
     <!--colors for card-->
     <color name="whiteCardColor">#FFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
 </resources>
