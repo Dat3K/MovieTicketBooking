@@ -13,14 +13,12 @@ import android.widget.Toast;
 import com.example.movieticketbooking.R;
 import com.example.movieticketbooking.models.User;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 
 public class SignupActivity extends AppCompatActivity {
 
     EditText signupName, signupUsername, signupEmail, signupPassword;
     TextView loginRedirectText;
     Button signupButton;
-    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +32,8 @@ public class SignupActivity extends AppCompatActivity {
         loginRedirectText = findViewById(R.id.loginRedirectText);
         signupButton = findViewById(R.id.signup_button);
 
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
         signupButton.setOnClickListener(view-> {
                 String name = signupName.getText().toString();
                 String email = signupEmail.getText().toString();
@@ -44,8 +44,6 @@ public class SignupActivity extends AppCompatActivity {
                     return;
                 }
                 User helperClass = new User(name, email, username, password);
-                reference.child(username).setValue(helperClass);
-                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(SignupActivity.this, "User Created", Toast.LENGTH_SHORT).show();
