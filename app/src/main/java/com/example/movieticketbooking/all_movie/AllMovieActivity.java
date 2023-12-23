@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.movieticketbooking.R;
 import com.example.movieticketbooking.booking_history.BookingHistoryActivity;
 import com.example.movieticketbooking.controllers.DataMovieController;
+import com.example.movieticketbooking.controllers.FakerMovieController;
 import com.example.movieticketbooking.home.HomeActivity;
 import com.example.movieticketbooking.home.MovieListAdapter;
 import com.example.movieticketbooking.models.Movie;
@@ -37,7 +38,6 @@ public class AllMovieActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //List<Movie> movieDataList = getMovieDataList();
         setContentView(R.layout.activity_all_movie);
         listMoviesRecyclerView = findViewById(R.id.home_list_movies);
         db = FirebaseFirestore.getInstance();

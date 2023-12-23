@@ -85,7 +85,7 @@ public class SeatBookingActivity  extends AppCompatActivity {
         List<Integer> selectedList = seatAdapter.getSelectedSeats();
 
         if (!selectedList.isEmpty()) {
-//            addBookingHistory(selectedList);
+            addBookingHistory(selectedList);
         }
 
         finish();
@@ -116,7 +116,7 @@ public class SeatBookingActivity  extends AppCompatActivity {
         builder.setMessage(R.string.confirmation_message_tickets);
 
         builder.setPositiveButton("Yes", (dialog, which) -> {
-//            handleConfirmationYes(bookingHistory);
+            handleConfirmationYes(bookingHistory);
         });
 
         builder.setNegativeButton("No", (dialog, which) ->{
