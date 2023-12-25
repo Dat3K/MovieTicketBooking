@@ -5,7 +5,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ import com.example.movieticketbooking.models.BookingHistory;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -36,11 +39,14 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private CollectionReference bookingCollection;
+    private CollectionReference userCollection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_history);
+
+
 
         // Initialize Firebase
         db = FirebaseFirestore.getInstance();
@@ -48,13 +54,36 @@ public class BookingHistoryActivity extends AppCompatActivity {
         mAuth = firebaseAuth.getCurrentUser();
         bookingCollection = db.collection("bookings");
 
+        // Initialize information
+        TextView titleName = findViewById(R.id.titleName1);
+        TextView titleUsername = findViewById(R.id.titleUsername1);
+        userCollection = db.collection("users");
+        userCollection.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                for (DocumentSnapshot document : task.getResult()) {
+                    if (document.getString("id").equals(mAuth.getUid())) {
+                        titleName.setText(document.getString("name"));
+                    }
+                }
+            } else {
+                Log.d("TAG", "get failed with ", task.getException());
+            }
+
+        });
+        titleUsername.setText(mAuth.getEmail());
+        Button btnEditProfile = findViewById(R.id.editButton2);
+        btnEditProfile.setOnClickListener(view -> {
+            Intent intent = new Intent(BookingHistoryActivity.this, EditProfileActivity.class);
+            startActivity(intent);
+        });
+
         // Initialize RecyclerView
         recyclerView = findViewById(R.id.bh_list_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         bookHistoryList = new ArrayList<>();
         bookHistoryAdapter = new BookingHistoryAdapter(this, bookHistoryList);
         recyclerView.setAdapter(bookHistoryAdapter);
-        ImageView homeBtn = findViewById(R.id.back_home);
+        ImageView homeBtn = findViewById(R.id.back_home_1);
         homeBtn.setOnClickListener(view ->{
             Intent intent = new Intent(BookingHistoryActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -85,6 +114,8 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
     public void handlerPayButtonClicked(int position) {
         // Create a confirmation dialog

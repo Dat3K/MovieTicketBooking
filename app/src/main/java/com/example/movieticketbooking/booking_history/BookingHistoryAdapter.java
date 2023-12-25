@@ -95,7 +95,7 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
         mapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String uri = "http://maps.google.com/maps?saddr=University of Science - VNUHCM" + "&daddr=" + "10.7689901,106.6829396,15z";
+                String uri = "http://maps.google.com/maps?saddr=Đại học Tôn Đức Thắng&daddr=Lotte Mart Quận 7";
 
                 Uri locationUri = Uri.parse(uri);
 

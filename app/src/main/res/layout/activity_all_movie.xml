@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Browse"
-            android:textSize="25sp"
             android:textColor="@color/colorMediumBlack"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,17 +45,19 @@
             android:id="@+id/back_home"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:layout_toLeftOf="@+id/browse_menu"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
-            android:src="@drawable/avatar"/>
+            android:layout_marginRight="119dp"
+            android:layout_toLeftOf="@+id/browse_menu"
+            android:src="@drawable/baseline_home_24" />
+
         <ImageView
             android:id="@+id/browse_menu"
             android:layout_width="100px"
             android:layout_height="100px"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="8dp"
-            android:src="@drawable/menu" />
+            android:src="@drawable/avatar" />
     </RelativeLayout>
 
     <SearchView

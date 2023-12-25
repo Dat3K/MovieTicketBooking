@@ -100,7 +100,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Synopis"
+                        android:text="Giới thiệu"
                         android:textColor="@color/colorGrey"
                         android:textSize="19sp"
                         android:textStyle="bold" />
@@ -154,14 +154,15 @@
                 </LinearLayout>
 
                 <TextView
-                    android:layout_marginTop="5dp"
-
+                    android:id="@+id/film_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:ellipsize="end"
                     android:lineSpacingExtra="8dp"
                     android:maxLines="4"
-                    android:text="Đấu Trường SĐấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.inh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12." />
+                    android:text="Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.inh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12.Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc là phần tiền truyện của mạch truyện chính, lấy bối cảnh 64 năm trước phần phim đầu tiên. Mạch phim theo chân Coriolanus Snow trẻ tuổi, chính là vị Tổng thống Snow trong loạt phim sau này. Lúc này Coriolanus là niềm hy vọng cuối cùng cho dòng dõi Snow đang dần lụi tàn. Được chỉ định trở thành cố vấn cho trò chơi, vai trò của anh là trợ giúp vật tế trong đấu trường và anh sẽ là cố vấn của Lucy Gray Baird - một cô gái đặc biệt đến từ Quận 12." />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="100dp"
                     android:layout_height="20dp"

@@ -14,11 +14,14 @@
 
         <ImageButton
             android:id="@+id/mp_close_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
-            android:layout_alignParentEnd="true"
+            android:layout_width="42dp"
+            android:layout_height="35dp"
             android:layout_alignParentTop="true"
-            android:layout_margin="16dp" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
     </RelativeLayout>
 </RelativeLayout>

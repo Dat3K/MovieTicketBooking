@@ -106,8 +106,8 @@ public class HomeActivity extends AppCompatActivity {
     private void initializeViews() {
         carouselRecyclerView = findViewById(R.id.home_carousel);
         listMoviesRecyclerView = findViewById(R.id.home_list_movies);
-        ImageView bookingHistoryBtn = findViewById(R.id.home_menu);
-        bookingHistoryBtn.setOnClickListener(view ->{
+        ImageView profileBtn = findViewById(R.id.home_menu);
+        profileBtn.setOnClickListener(view ->{
             Intent intent = new Intent(HomeActivity.this, BookingHistoryActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

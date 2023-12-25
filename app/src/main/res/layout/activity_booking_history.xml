@@ -1,64 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_margin="20dp"
-    android:layout_height="match_parent">
-    <RelativeLayout
-        android:id="@+id/home_header"
-        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profilebkg"
+    >
+
+    <ImageView
+        android:id="@+id/back_home_1"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="344dp"
+        android:layout_marginRight="119dp"
+        android:src="@drawable/baseline_home_24" />
+
+    <Button
+        android:id="@+id/editButton2"
+        android:layout_width="306dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="Edit Profile"
+        android:textSize="18sp"
+        card_view:cornerRadius="20dp"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintHorizontal_bias="0.495"
+        card_view:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/titleUsername1"
+        android:layout_width="341dp"
         android:layout_height="wrap_content"
-        >
+        android:layout_below="@+id/titleName1"
+        android:layout_alignStart="@+id/profileImg8"
+        android:layout_alignEnd="@+id/profileImg8"
+        android:layout_marginStart="-97dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="-99dp"
+        android:gravity="center"
+        android:text="username"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/home_showing_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Booking History"
-            android:textSize="25sp"
-            android:textColor="@color/colorMediumBlack"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/titleName1"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileImg8"
+        android:layout_alignStart="@+id/profileImg8"
+        android:layout_alignEnd="@+id/profileImg8"
+        android:layout_marginStart="-37dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="-35dp"
+        android:gravity="center"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/home_movie_chennai"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorGrey"
-            android:layout_below="@+id/home_showing_text"
-            android:textStyle="italic"
-            android:text="Movies in Chennai" />
+    <ImageView
+        android:id="@+id/profileImg8"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="135dp"
+        android:src="@drawable/avatar" />
 
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/home_showing_text"
-            android:layout_toRightOf="@+id/home_movie_chennai"
-            android:src="@drawable/drop_down"
-
-            android:textColor="@color/colorGrey" />
-
-        <ImageView
-            android:id="@+id/back_home"
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:layout_toLeftOf="@+id/home_menu"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="12dp"
-            android:src="@drawable/avatar"/>
-        <ImageView
-            android:id="@+id/home_menu"
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="12dp"
-            android:src="@drawable/menu" />
-    </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/home_header"
         android:id="@+id/bh_list_recycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="wrap_content"
+        android:layout_height="419dp"
+        android:layout_above="@+id/editButton2"
+        android:layout_below="@+id/titleUsername1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="40dp"
+        />
 </RelativeLayout>
