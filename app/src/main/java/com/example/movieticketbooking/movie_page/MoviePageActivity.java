@@ -1,5 +1,6 @@
 package com.example.movieticketbooking.movie_page;
 
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -20,6 +21,7 @@ import com.example.movieticketbooking.utils.StringUtil;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MoviePageActivity extends AppCompatActivity {
@@ -30,6 +32,7 @@ public class MoviePageActivity extends AppCompatActivity {
     private List<String> calendarList;
     private Movie movie;
     private CalendarAdapter calendarAdapter;
+    Button shareButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,7 @@ public class MoviePageActivity extends AppCompatActivity {
     private void setupButtons() {
         ImageView backBtn = findViewById(R.id.mp_back_activity);
         ImageView nextBtn = findViewById(R.id.mp_next_activity);
+        shareButton = findViewById(R.id.mp_share_btn);
 
         backBtn.setOnClickListener(v -> finish());
 
@@ -99,6 +103,18 @@ public class MoviePageActivity extends AppCompatActivity {
                 return;
             }
             startSeatBookingActivity(movie,calendarAdapter.getChosenDate(),theaterAdapter.getChosenTheater(),theaterAdapter.getChosenTime());
+        });
+
+        shareButton.setOnClickListener(v -> {
+            String shareUrl = "https://www.youtube.com/results?search_query=" + movie.getName().replace(" ","+") + " trailer";
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Movie Ticket Booking");
+            intent.putExtra(Intent.EXTRA_TEXT,shareUrl );
+            startActivity(Intent.createChooser(intent, "Share"));
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            clipboard.setText(shareUrl);
+            Toast.makeText(MoviePageActivity.this,"Đã copy link",Toast.LENGTH_SHORT).show();
         });
     }
 

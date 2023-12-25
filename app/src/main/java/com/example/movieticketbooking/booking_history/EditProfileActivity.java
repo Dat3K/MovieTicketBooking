@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.movieticketbooking.R;
@@ -25,6 +26,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     EditText editName, editEmail, editPassword;
     Button saveButton;
+    ImageView backButton;
     CollectionReference reference;
     FirebaseFirestore db;
 
@@ -44,6 +46,7 @@ public class EditProfileActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.newPassword);
         saveButton = findViewById(R.id.saveButton);
+        backButton = findViewById(R.id.backBtn);
 
         showData();
 
@@ -55,6 +58,12 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
             }
         });
+
+       backButton.setOnClickListener(v -> {
+           Intent intent = new Intent(EditProfileActivity.this, BookingHistoryActivity.class);
+           startActivity(intent);
+           finish();
+       });
     }
 
     private void updateProfile() {
@@ -100,10 +109,12 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void showData(){
+        editEmail.setText(user.getEmail());
         reference.get().addOnSuccessListener(queryDocumentSnapshots -> {
             for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
-                editName.setText(documentSnapshot.getString("name"));
-                editEmail.setText(documentSnapshot.getString("email"));
+                if(documentSnapshot.getString("id").equals(user.getUid())){
+                    editName.setText(documentSnapshot.getString("name"));
+                }
             }
         });
     }
