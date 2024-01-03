@@ -24,9 +24,9 @@
             android:src="@drawable/back" />
 
         <Button
+            android:id="@+id/mp_share_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/mp_share_btn"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="40dp"
             android:layout_marginRight="50dp"

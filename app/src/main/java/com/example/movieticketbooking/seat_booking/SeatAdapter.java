@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import static com.example.movieticketbooking.utils.SeatStatusEnum.STATUS_AVAILABLE;
 import static com.example.movieticketbooking.utils.SeatStatusEnum.STATUS_BOOKED;
 import static com.example.movieticketbooking.utils.SeatStatusEnum.STATUS_SELECTED;
@@ -17,11 +18,11 @@ import com.example.movieticketbooking.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeatAdapter  extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder> {
+public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder> {
 
     private List<Integer> seatList;
     private Context context;
-    List<Integer> selectedSeats ;
+    List<Integer> selectedSeats;
     private int selectedSeatCount = 0;
 
     public SeatAdapter(List<Integer> seatList, Context context) {
@@ -45,10 +46,10 @@ public class SeatAdapter  extends RecyclerView.Adapter<SeatAdapter.SeatViewHolde
 
         // Set the initial status of the seat
         if (seatStatus == STATUS_BOOKED) {
-            holder.sbImg.setImageResource(R.drawable.seat_booked);
+            holder.sbImg.setImageResource(R.drawable.seat_selected_red);
             holder.itemView.setClickable(false);
         } else if (seatStatus == STATUS_SELECTED) {
-            holder.sbImg.setImageResource(R.drawable.seat_selected);
+            holder.sbImg.setImageResource(R.drawable.seat_selected_red);
             selectedSeatCount++;
             holder.itemView.setOnClickListener(v -> onSeatClick(position, holder));
         } else {
@@ -67,12 +68,18 @@ public class SeatAdapter  extends RecyclerView.Adapter<SeatAdapter.SeatViewHolde
 
         if (seatStatus == STATUS_AVAILABLE) {
             seatList.set(position, STATUS_SELECTED); // Set as selected
-            holder.sbImg.setImageResource(R.drawable.seat_selected);
+            holder.sbImg.setImageResource(R.drawable.seat_selected_red);
             selectedSeatCount++;
+            if (position <= 19) {
+                selectedSeatCount++;
+            }
         } else if (seatStatus == STATUS_SELECTED) {
             seatList.set(position, STATUS_AVAILABLE); // Set as available
             holder.sbImg.setImageResource(R.drawable.seat_available);
             selectedSeatCount--;
+            if (position <= 19) {
+                selectedSeatCount--;
+            }
         }
         selectedSeats.clear();
         for (int i = 0; i < seatList.size(); i++) {

@@ -97,8 +97,7 @@ public class BookingHistoryActivity extends AppCompatActivity {
                 handlerPayButtonClicked(position);
             }
         });
-
-        //        FakerMovieController fakerMovieController = new FakerMovieController(this);
+//        FakerMovieController fakerMovieController = new FakerMovieController(this);
 //        fakerMovieController.addDummyBookingHistoryListToDb();
         DataBookingHistoryController dataBookingHistoryController = new DataBookingHistoryController(this);
         dataBookingHistoryController.getBookingHistoryByUserId(mAuth.getUid(), new DataBookingHistoryController.OnBookingReceivedListener() {

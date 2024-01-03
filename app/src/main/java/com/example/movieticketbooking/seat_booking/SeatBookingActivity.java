@@ -36,6 +36,7 @@ public class SeatBookingActivity  extends AppCompatActivity {
     private String time;
     private String date;
     private Movie movie;
+    TextView ticketCost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class SeatBookingActivity  extends AppCompatActivity {
 
     private void updateUI(int selectedSeatCount) {
         TextView ticketNum = findViewById(R.id.sb_ticket_num);
-        TextView ticketCost = findViewById(R.id.sb_ticket_cost);
+        ticketCost = findViewById(R.id.sb_ticket_cost);
 
         ticketNum.setText(String.valueOf(selectedSeatCount));
         ticketCost.setText('$' + String.valueOf(selectedSeatCount * 10));
@@ -98,8 +99,8 @@ public class SeatBookingActivity  extends AppCompatActivity {
             Toast.makeText(SeatBookingActivity.this, "Hãy chọn một ghế", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        double cost = selectedList.size() * 10;
+        String[] costStr = ticketCost.getText().toString().split("\\$");
+        double cost = Double.parseDouble(costStr[1]);
 
         BookingHistory bookingHistory = createBookingHistory(selectedList, cost);
         showConfirmationDialog(bookingHistory);
